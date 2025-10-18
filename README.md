@@ -70,22 +70,26 @@ Matches found:
 
 ---
 
-##  Folder Structure
+## 📁 Folder Structure
 
+```text
 RegexQL/
+│
 ├── Makefile
+│
 └── src/
-├── main.cpp
-├── lexer.cpp
-├── parser.cpp
-├── translator.cpp
-├── executor.cpp
-├── lexer.h
-├── parser.h
-├── translator.h
-├── executor.h
-└── utils.h
-
+    ├── main.cpp
+    ├── lexer.cpp
+    ├── parser.cpp
+    ├── translator.cpp
+    ├── executor.cpp
+    ├── lexer.h
+    ├── parser.h
+    ├── translator.h
+    ├── executor.h
+    └── utils.h
+```
+    
 ---
 
 ##  Working of Each Phase
