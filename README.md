@@ -73,21 +73,18 @@ Matches found:
 ##  Folder Structure
 
 RegexQL/
-│
-├── src/
-│  ├── lexer.h
-│ ├── parser.h
-│ ├── translator.h
-│ ├── executor.h
-│ ├── lexer.cpp
-│ ├── parser.cpp
-│ ├── translator.cpp
-│ └── executor.cpp
-│
-├── main.cpp
 ├── Makefile
-└── README.md
-
+└── src/
+├── main.cpp
+├── lexer.cpp
+├── parser.cpp
+├── translator.cpp
+├── executor.cpp
+├── lexer.h
+├── parser.h
+├── translator.h
+├── executor.h
+└── utils.h
 
 ---
 
