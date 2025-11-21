@@ -3,12 +3,10 @@
 #include "parser.h"
 #include "executor.h"
 
-int main() {
-    using std::cout;
-    using std::cin;
-    using std::getline;
+using namespace std;
 
-    cout << "==================== RegexQL ====================\n";
+int main() {
+    cout << "                 RegexQL              \n";
     cout << "Examples:\n";
     cout << "  find email\n";
     cout << "  match phone number starting with +91\n";

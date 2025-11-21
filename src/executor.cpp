@@ -1,69 +1,37 @@
-// #include "executor.h"
-// #include <regex>
-// #include <iostream>
-
-// void executeQuery(const Query& q, const std::string& text) {
-//     std::string pattern = translateToRegex(q);
-//     if (pattern.empty()) {
-//         std::cout << "Unsupported pattern or invalid query.\n";
-//         return;
-//     }
-
-//     std::cout << "\nGenerated regex: " << pattern << "\n";
-//     std::cout << "Matches: \n";
-
-//     try {
-//         std::regex re(pattern);
-//         std::smatch match;
-//         auto searchStart = text.cbegin();
-//         bool found = false;
-
-//         while (std::regex_search(searchStart, text.cend(), match, re)) {
-//             found = true;
-//             std::cout << match.str(0) << "\n"; 
-//             searchStart = match.suffix().first;
-//         }
-
-//         if (!found) {
-//             std::cout << "No matches found.\n";
-//         }
-
-//     } catch (const std::regex_error &e) {
-//         std::cout << "Regex error: " << e.what() << "\n";
-//     }
-// }
 #include "executor.h"
 #include <regex>
 #include <iostream>
 
-void executeQuery(const Query& q, const std::string& text) {
-    std::string pattern = translateToRegex(q);
+using namespace std;
+
+void executeQuery(const Query& q, const string& text) {
+    string pattern = translateToRegex(q);
 
     if (pattern.empty()) {
-        std::cout << "Unsupported pattern or invalid query.\n";
+        cout << "Unsupported pattern or invalid query.\n";
         return;
     }
 
-    std::cout << "\nGenerated regex: " << pattern << "\n";
-    std::cout << "Matches:\n";
+    cout << "\nGenerated regex: " << pattern << "\n";
+    cout << "Matches:\n";
 
     try {
-        std::regex re(pattern);
-        std::smatch match;
+        regex re(pattern);
+        smatch match;
 
         auto searchStart = text.cbegin();
         bool found = false;
 
-        while (std::regex_search(searchStart, text.cend(), match, re)) {
+        while (regex_search(searchStart, text.cend(), match, re)) {
             found = true;
-            std::cout << match.str(0) << "\n";
+            cout << match.str(0) << "\n";
             searchStart = match.suffix().first;
         }
 
         if (!found)
-            std::cout << "No matches found.\n";
+            cout << "No matches found.\n";
 
-    } catch (const std::regex_error &e) {
-        std::cout << "Regex error: " << e.what() << "\n";
+    } catch (const regex_error &e) {
+        cout << "Regex error: " << e.what() << "\n";
     }
 }
